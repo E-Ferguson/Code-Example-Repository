@@ -59,7 +59,7 @@ void printMemory();
 /////////////////////////////////////////
 
 
-int main(int argc, char *argv[]){
+int main( int argc, char *argv[] ){
    
     char *filename;
     
@@ -81,7 +81,7 @@ int main(int argc, char *argv[]){
 
 } 
 
-void load(char *filename){
+void load( char *filename ){
     
     FILE *infile;
 	infile = fopen(filename, "r");
@@ -151,81 +151,66 @@ void decode(){
 	int STR  = 7;
 	int TRAP = 15;
 
-
-
     
     short instruction = MEMORY[IR];
    	unsigned int opcode = ( instruction & 65535 )  >> 12; 
     
-    if (opcode == ADD ) {
+    if (opcode == ADD ) 
         add(instruction);
-    }
-    else if ( opcode == AND ) {
-    	
+    
+    
+    else if ( opcode == AND ) 
         and(instruction);
-        
-    }
-    else if( opcode == 0 ) { //BR opcode == 0000
-    	
+    
+    
+    else if( opcode == 0 )  //BR opcode == 0000
         br(instruction);
-    }
+    
     
     else if ( opcode == JMP ) {
     	
     	if ( ( instruction & 448 ) == 448)
     		ret(instruction);
-    	else{
-    	
-        jmp(instruction);
-        }
+    	else
+    		jmp(instruction);
+        
     }
     
-    else if ( opcode == JSR ) {
-    	
+    else if ( opcode == JSR ) 
     	jsr(instruction);
-        
-    }
-    else if ( opcode == LD ) {
-    	
-        ld(instruction);
-    }
-    else if ( opcode == LDR ){
-    	
+    
+    
+    else if ( opcode == LD ) 
+    	ld(instruction);
+    
+    else if ( opcode == LDR )
     	ldr(instruction);
-        
-    }
     
-    else if ( opcode == LEA ) {
-    	
-        lea(instruction);
-    }
-    else if ( opcode == NOT ){
-    	
+    else if ( opcode == LEA ) 
+    	lea(instruction);
+    
+    else if ( opcode == NOT )	
         not(instruction);
-    }
-    else if ( opcode == RET ){
-    	
-        ret(instruction);
-    }
     
-    else if( ( opcode & ST ) == opcode){
-    	
-        st(instruction);
-    }
+    else if ( opcode == RET )
+    	ret(instruction);
     
-    else if ( opcode == STR ){
+    
+    else if( ( opcode & ST ) == opcode)
+    	st(instruction);
+    
+    else if ( opcode == STR )
     	str(instruction);
-    }
     
-    else if ( opcode == TRAP ){
+    
+    else if ( opcode == TRAP )
    		trap(instruction);
-    }
+    
     
     else{ //we have an invalid instruction
         
-        printf("Error!! Invalid Instruction: 0x%x\n", instruction);
+        fprintf(stderr, "Error!! Invalid Instruction: 0x%x\n", instruction);
         exit(1);
-        
     }
     
     
