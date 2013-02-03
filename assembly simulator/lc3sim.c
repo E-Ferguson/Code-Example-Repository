@@ -136,7 +136,7 @@ void decode(){
 	int ADD = 1;
 	int AND = 5;
 
-	int NOTBR = 15; //since the BR opcode is 0000 we will perform the bitwise
+	//int NOTBR = 15; //since the BR opcode is 0000 we will perform the bitwise
 	//and operation with 1111000000000000 to determine if all
 	//bits are turned off as opposed to on. 
 
@@ -173,12 +173,10 @@ void decode(){
     		ret(instruction);
     	else
     		jmp(instruction);
-        
     }
     
     else if ( opcode == JSR ) 
     	jsr(instruction);
-    
     
     else if ( opcode == LD ) 
     	ld(instruction);
@@ -194,7 +192,6 @@ void decode(){
     
     else if ( opcode == RET )
     	ret(instruction);
-    
     
     else if( ( opcode & ST ) == opcode)
     	st(instruction);
@@ -747,9 +744,6 @@ void putChars(){
 	unsigned int curAddress = startingAddress;
 	
 	int currentChar = MEMORY[startingAddress];
-	
-	
-	
 	int theCounter = 0;
 	
 	while ( currentChar != 0){
@@ -803,7 +797,7 @@ void decOut(){
 	int printValue = generalRegisters[0]; //the value to be printed is in R0
 	printf("The decimal value: %d\n", printValue);
 	
-
+}
 
 /**
  * The service routine for printing a hexadecimal integer
@@ -830,14 +824,14 @@ void printRegisters(){
 
 	int i;
 	printf("The registers in DECIMAL notation: \n");
-	for(i = 0; i < 9; i++){
+	for(i = 0; i < 9; i++)
 		printf("\tRegister %d: %d\n", i, generalRegisters[i]);
-	}
+	
 
 	printf("\nThe registers in HEX notation: \n");
-	for(i = 0; i < 9; i++){
+	for(i = 0; i < 9; i++)
 		printf("\tRegister %d: %x\n", i, generalRegisters[i]);
-	}
+	
 	
     
 }
@@ -852,12 +846,11 @@ void printRegisters(){
 void printMemory(){
 	
 	int i = 0x100;
-	int pseudo = 0;
-	while ( pseudo < 100 ) {
-		
+	int loop = 0;
+	while ( loop < 100 ) {
 		printf("Memory location %x contains: %x\n", i, MEMORY[i]);
 		i++;
-		pseudo++;
+		loop++;
 	}
 	
 }
