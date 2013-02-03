@@ -1,0 +1,14 @@
+
+Instructions for usage:
+
+
+	The LC3 assembly language is a mock assembly language with 19 instructions, 12 of which are supported with the code.  The usage is as follows:
+				
+	lc3sim [yyy.txt]
+
+where yyy.txt is some text file with encoded instructions in hexadecimal.  The format for the instructions are as follows:
+	
+           ADD: 0001 DestinationRegister(3 bits) SourceRegister1(3 bits) 000 SourceRegister2(3 bits)
+ADD(immediate): 0001 DestinationRegister(3 bits) SourceRegister1(3 bits) 1   ImmediateValue(5 bits) 	        AND: 0101 DestinationRegister(3 bits) SourceRegister1(3 bits) 000 SourceRegister2(3 bits)
+AND(immediate): 0001 DestinationRegister(3 bits) SourceRegister1(3 bits) 1   ImmediateValue(5 bits) 
+
