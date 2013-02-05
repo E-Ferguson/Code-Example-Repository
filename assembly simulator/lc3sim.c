@@ -135,11 +135,6 @@ void decode(){
 	//////////the instructions//////////
 	int ADD = 1;
 	int AND = 5;
-
-	//int NOTBR = 15; //since the BR opcode is 0000 we will perform the bitwise
-	//and operation with 1111000000000000 to determine if all
-	//bits are turned off as opposed to on. 
-
 	int JMP  = 12;
 	int JSR  = 4;
 	int LD   = 2;
