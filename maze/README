@@ -1,6 +1,10 @@
 
 
-The aim of this project was to work with an existing java codebase for a maze game and expand functionality.  Modifications included allowing users to build the maze with an alternate algorithm that changed the layout, implementing drivers that could automatically solve the maze or simulate a certain maze navigation strategy (following a wall, choosing a random direction, etc), and porting the project to an Android platform.  Everything up to the android porting stage is included in this folder.
+The aim of this project was to work with an existing java codebase for a maze game and expand functionality.  
+Modifications included allowing users to build the maze with an alternate algorithm that changed the layout, 
+implementing drivers that could automatically solve the maze or simulate a certain maze navigation 
+strategy (following a wall, choosing a random direction, etc), and porting the project to an Android platform.  
+Everything up to the android porting stage is included in this folder.
 
 
 Classes authored exclusively by me:
