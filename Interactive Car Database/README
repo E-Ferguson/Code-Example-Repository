@@ -1,6 +1,8 @@
 
 
-This project was a ground-up application designed to allow users to interact with a car database.  Functionality included the ability to look up cars based on make and model, the option to search for cars based on certain fields (horsepower, fuel efficiency, etc),  and a car-matching option that would find similar cars based on a user-supplied one.  The user interface was a Tkinter GUI and the backend was written in Python code with embedded SQL.
+This project was a ground-up application designed to allow users to interact with a car database.  Functionality included the ability to look up cars based on make and model, 
+the option to search for cars based on certain fields (horsepower, fuel efficiency, etc),  and a car-matching option that would find similar cars based on a user-supplied one.  
+The user interface was a Tkinter GUI and the backend was written in Python code with embedded SQL.
 
 I did the majority of the work on the design, writing most of the code for projectDriver.py carLookup.py, and carCategorize.py. 
  
