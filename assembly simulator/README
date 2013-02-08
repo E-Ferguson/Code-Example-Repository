@@ -8,7 +8,20 @@ Instructions for usage:
 
 where yyy.txt is some text file with encoded instructions in hexadecimal.  The format for the instructions are as follows:
 	
-           ADD: 0001 DestinationRegister(3 bits) SourceRegister1(3 bits) 000 SourceRegister2(3 bits)
-ADD(immediate): 0001 DestinationRegister(3 bits) SourceRegister1(3 bits) 1   ImmediateValue(5 bits) 	        AND: 0101 DestinationRegister(3 bits) SourceRegister1(3 bits) 000 SourceRegister2(3 bits)
-AND(immediate): 0001 DestinationRegister(3 bits) SourceRegister1(3 bits) 1   ImmediateValue(5 bits) 
+           ADD: 0001   DestinationRegister(3 bits)  SourceRegister1(3 bits)  000           SourceRegister2(3 bits)
+ADD(immediate): 0001   DestinationRegister(3 bits)  SourceRegister1(3 bits)  1             ImmediateValue(5 bits) 	        
+           AND: 0101   DestinationRegister(3 bits)  SourceRegister1(3 bits)  000           SourceRegister2(3 bits)
+AND(immediate): 0001   DestinationRegister(3 bits)  SourceRegister1(3 bits)  1             ImmediateValue(5 bits)
+           JMP: 1100   000                          BaseRegister(3 bits)     000000 
+	   JSR: 0100   1                            PC_Offset(11 bits)
+            LD: 0010   DestinationRegister(3 bits)  PC_Offset(9 bits)
+           LDR: 0110   DestinationRegister(3 bits)  BaseRegister(3 bits)     offset(6 bits)
+           LEA: 1110   DestinationRegister(3 bits)  PC_Offset(9 bits)
+           NOT: 1001   DestinationRegister(3 bits)  SourceRegister(3 bits)   111111
+	   RET: 1100   000                          111                      000000
+	    ST: 0011   SourceRegister(3 bits)       PC_Offset(9 bits)
+           STR: 0111   SourceRegister(3 bits)       BaseRegister(3 bits)     offset(6 bits)
+	  TRAP: 1111   0000                         Trap_Vector(8 bits)
+
+
 
